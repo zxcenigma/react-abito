@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    /*padding - внутренний отступ, margin - внешний отступ*/
+    padding: 0 12px; /*верх низ 0, право лево 12*/
+    margin: 0 auto;
+    /* border: 1px solid #000; */
+}
+
+.btn {
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px 10px 15px; /* по часовой стрелке*/
+    border-radius: 5px; /*закругление*/
+    border: none;
+    cursor: pointer; /*пальчик*/
+}
+
+.btn-outline {
+    background-color: transparent; /*Прозрачная кнопка*/
+}
+
+.btn-primary {
+    background-color: rgb(37, 110, 235);
+    color: rgb(255, 255, 255)
+}
+
+
+.header {
+    padding-top: 30px;
+    padding-bottom: 24px;
+}
+
+.header-box {
+    display: flex; /* чтобы раскидывать внутри 1 блока другие блоки в строчку*/
+    justify-content: space-between; /*Управляет горизонтом - Раскидывает по краям*/
+    align-items: center;
+    /* border: 1px solid #000; */
+}
+
+.header-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /*центрирует flex элементы*/
+}
+
+.header-logo span {
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+/*Адаптивная верстка, появится только для ширины экрана ниже 786 px*/
+.header-burger {
+    width: 30px;
+    height: 19px;
+    display: none;
+}
+
+.search {
+    margin-bottom: 45px; /* расстояние между секциями*/
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(37, 110, 235);
+    padding: 3px;
+}
+.search-box input {
+    flex-grow: 1; /* займет все оставшееся место*/
+    padding: 14px 22px;
+
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    min-width: 0;
+}
+.search-btn {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+    justify-content: space-between;
+
+}
+
+.search-btn .search-btn__icon {
+    width: 15px;
+    height: 15px;
+}
+.search-btn .search-btn__text {
+    margin-left: 2px;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+/*Cтандарт bootstrap*/
+@media (max-width: 1200px) {
+    .container {
+        max-width: 930px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 730px;
+    }   
+}
+
+@media (max-width: 786px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .header-controls {
+        display: none;
+    }
+
+    .header-burger {
+        display: block;
+    }
+
+    .search-btn .search-btn__text {
+        display: none;
+    }
+}
