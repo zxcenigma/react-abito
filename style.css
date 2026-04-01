@@ -1,3 +1,5 @@
+/* --- common --- */
+
 * {
     box-sizing: border-box;
 }
@@ -35,6 +37,7 @@ body {
     color: rgb(255, 255, 255)
 }
 
+/* --- header --- */
 
 .header {
     padding-top: 30px;
@@ -67,6 +70,8 @@ body {
     height: 19px;
     display: none;
 }
+
+/* --- search --- */
 
 .search {
     margin-bottom: 45px; /* расстояние между секциями*/
@@ -110,18 +115,166 @@ body {
     line-height: 19px;
 }
 
+/* --- content-main --- */
+
+.content {
+    padding-bottom: 50px;
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* прижать к верхнему краю content box */
+    gap: 30px; /* отступы между flex элементами content-side и content-main*/
+    /* border: 1px solid blue; */
+}
+.content-main {
+    flex-grow: 1;
+}
+.content-side {
+    width: 260px;
+    min-width: 260px;
+}
+.content-main__title {
+   font-size: 24px;
+   line-height: 28px;
+   margin-top: 0;
+   margin-bottom: 25px;
+}
+.content-main__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+
+}
+.content-main__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* в обычном flex управляет вверх/вниз, в реверсе лево/право */
+    width: calc((100% - 60px) / 3);
+
+    /* Работают в связке для картинок, картинке надо дать width 100% */
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none; /* убрать подчеркивания со ссылки*/
+}
+.content-main__list-item--img {
+    display: flex;
+    width: 100%;
+}
+.content-main__list-item--img img{
+    width: 100%;
+}
+.content-main__list-item--title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 19px;
+    color: black;
+}
+/* при наведении на item второй стиль получит изменения */
+.content-main__list-item:hover .content-main__list-item--title {
+    color: rgb(37, 110, 235);
+}
+
+    /* color: rgb(37, 110, 235); */
+.content-main__list-item--price {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+    color: black;
+}
+.content-main__list-item--desc-box {
+   display: flex;
+   flex-direction: column;
+   row-gap: 4px;
+}
+.content-main__list-item--desc {
+    font-size: 14px;
+    line-height: 16px;
+    color: rgb(196, 196, 196);
+}
+
+/* --- content-side --- */
+.content-side__box {
+
+}
+.content-side__title {
+    margin-top: 0;
+    margin-bottom: 23px;
+    font-size: 18px;
+    line-height: 24px;
+}
+.content-side__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 25px;
+
+    border-bottom: 1px solid rgb(229, 229, 229);
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+}
+.content-side__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.content-side__list-item--title {
+    margin-top: 7px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 16px;
+}
+.content-side__list-item--text {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+}
+
+/* --- content-side__footer --- */
+.content-side__footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+.content-side__footer--item{
+    color: rgb(196, 196, 196);
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+}
 
 /*Cтандарт bootstrap*/
 @media (max-width: 1200px) {
     .container {
         max-width: 930px;
     }
+    .content-main__list-item {
+        width: calc((100% - 60px) / 2); 
+}
 }
 
 @media (max-width: 991px) {
     .container {
         max-width: 730px;
     }   
+    .content-main__list-item {
+        width: calc((100% - 60px) / 2); 
+    }
+    .content-box {
+        flex-direction: column;
+    }
+    .content-main {
+        width: 100%;
+    }
+    .content-side {
+        width: 100%;
+        min-width: none;
+    }
 }
 
 @media (max-width: 786px) {
@@ -132,12 +285,30 @@ body {
     .header-controls {
         display: none;
     }
-
     .header-burger {
         display: block;
     }
 
     .search-btn .search-btn__text {
         display: none;
+    }
+
+    .content-box {
+        flex-direction: column;
+    }
+    .content-main {
+        width: 100%;
+    }
+    .content-side {
+        width: 100%;
+    }
+    .content-main__list-item {
+        width: calc((100% - 60px) / 2); 
+    }
+}
+
+@media (max-width: 500px) {
+    .content-main__list-item {
+        width: 100%; 
     }
 }
