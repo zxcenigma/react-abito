@@ -55,6 +55,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center; /*центрирует flex элементы*/
+    text-decoration: none;
 }
 
 .header-logo span {
@@ -62,6 +63,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     padding-left: 6px;
+    color: rgb(10, 20, 58);
 }
 
 /*Адаптивная верстка, появится только для ширины экрана ниже 786 px*/
@@ -248,6 +250,41 @@ body {
     line-height: 16px;
 }
 
+/* --- content-product --- */
+.content-product {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-grow: 1;
+    gap: 30px;
+}
+
+.content-product__left {
+    /* border: 1px solid red; */
+    flex-basis: 50%;
+}
+
+.content-product__right {
+    /* border: 1px solid black; */
+    flex-basis: 50%;
+}
+
+.content-product__title, .content-product__price {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 25px;    
+}
+
+.content-product__img {
+    width: 100%;
+}
+
+.content-product__text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
 /*Cтандарт bootstrap*/
 @media (max-width: 1200px) {
     .container {
@@ -274,6 +311,21 @@ body {
     .content-side {
         width: 100%;
         min-width: none;
+    }
+
+    
+    .content-product{
+        flex-direction: column;
+        width: 100%;
+    }
+    .content-product__left {
+        /* border: 1px solid red; */
+        flex-basis: 100%;
+    }
+
+    .content-product__right {
+        /* border: 1px solid black; */
+        flex-basis: 100%;
     }
 }
 
