@@ -1,0 +1,239 @@
+/* --- common --- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    /*padding - внутренний отступ, margin - внешний отступ*/
+    padding: 0 12px; /*верх низ 0, право лево 12*/
+    margin: 0 auto;
+    /* border: 1px solid #000; */
+}
+
+.btn {
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px 10px 15px; /* по часовой стрелке*/
+    border-radius: 5px; /*закругление*/
+    border: none;
+    cursor: pointer; /*пальчик*/
+}
+
+.btn-outline {
+    background-color: transparent; /*Прозрачная кнопка*/
+}
+
+.btn-primary {
+    background-color: rgb(37, 110, 235);
+    color: rgb(255, 255, 255)
+}
+
+
+
+/* --- search --- */
+
+.search {
+    margin-bottom: 45px; /* расстояние между секциями*/
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(37, 110, 235);
+    padding: 3px;
+}
+.search-box input {
+    flex-grow: 1; /* займет все оставшееся место*/
+    padding: 14px 22px;
+
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    min-width: 0;
+}
+.search-btn {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+    justify-content: space-between;
+
+}
+
+.search-btn .search-btn__icon {
+    width: 15px;
+    height: 15px;
+}
+.search-btn .search-btn__text {
+    margin-left: 2px;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+/* --- content-main --- */
+
+.content {
+    padding-bottom: 50px;
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* прижать к верхнему краю content box */
+    gap: 30px; /* отступы между flex элементами content-side и content-main*/
+    /* border: 1px solid blue; */
+}
+.content-main {
+    flex-grow: 1;
+}
+.content-side {
+    width: 260px;
+    min-width: 260px;
+}
+.content-main__title {
+   font-size: 24px;
+   line-height: 28px;
+   margin-top: 0;
+   margin-bottom: 25px;
+}
+.content-main__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+
+}
+
+/* --- content-side --- */
+.content-side__box {
+
+}
+.content-side__title {
+    margin-top: 0;
+    margin-bottom: 23px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* --- content-side__footer --- */
+.content-side__footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+.content-side__footer--item{
+    color: rgb(196, 196, 196);
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* --- content-product --- */
+.content-product {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-grow: 1;
+    gap: 30px;
+}
+
+.content-product__left {
+    /* border: 1px solid red; */
+    flex-basis: 50%;
+}
+
+.content-product__right {
+    /* border: 1px solid black; */
+    flex-basis: 50%;
+}
+
+.content-product__title, .content-product__price {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 25px;    
+}
+
+.content-product__img {
+    width: 100%;
+}
+
+.content-product__text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+/*Cтандарт bootstrap*/
+@media (max-width: 1200px) {
+    .container {
+        max-width: 930px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 730px;
+    }   
+    .content-box {
+        flex-direction: column;
+    }
+    .content-main {
+        width: 100%;
+    }
+    .content-side {
+        width: 100%;
+        min-width: none;
+    }
+
+    
+    .content-product{
+        flex-direction: column;
+        width: 100%;
+    }
+    .content-product__left {
+        /* border: 1px solid red; */
+        flex-basis: 100%;
+    }
+
+    .content-product__right {
+        /* border: 1px solid black; */
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 786px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .search-btn .search-btn__text {
+        display: none;
+    }
+
+    .content-box {
+        flex-direction: column;
+    }
+    .content-main {
+        width: 100%;
+    }
+    .content-side {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+}

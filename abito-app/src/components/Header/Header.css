@@ -1,0 +1,49 @@
+/* --- header --- */
+
+.header {
+    padding-top: 30px;
+    padding-bottom: 24px;
+}
+
+.header-box {
+    display: flex;
+    /* чтобы раскидывать внутри 1 блока другие блоки в строчку*/
+    justify-content: space-between;
+    /*Управляет горизонтом - Раскидывает по краям*/
+    align-items: center;
+    /* border: 1px solid #000; */
+}
+
+.header-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*центрирует flex элементы*/
+    text-decoration: none;
+}
+
+.header-logo span {
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 6px;
+    color: rgb(10, 20, 58);
+}
+
+/*Адаптивная верстка, появится только для ширины экрана ниже 786 px*/
+.header-burger {
+    width: 30px;
+    height: 19px;
+    display: none;
+}
+
+
+@media (max-width: 786px) {
+    .header-controls {
+        display: none;
+    }
+
+    .header-burger {
+        display: block;
+    }
+}
